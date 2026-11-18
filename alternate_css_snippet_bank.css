@@ -1,0 +1,1592 @@
+/*
+====================================================================
+ ALTERNATE CSS SNIPPET BANK
+ DESIGN SYSTEMS: BOOTSTRAP-INSPIRED + TAILWIND-INSPIRED
+====================================================================
+ COPY-PASTE REFERENCE ONLY
+ - This file is a code bank. It is not intended to be linked as a
+   required framework or dependency.
+ - Find a component, copy its complete section into your project's
+   own CSS file, and use the matching class names in your HTML.
+ - The two systems are independent: use classes with the "bs-" prefix
+   for the Bootstrap-inspired system, or "tw-" for Tailwind-inspired.
+ - No Bootstrap, Tailwind, JavaScript, fonts, or external assets needed.
+ - Copy the responsive section for any component that needs it.
+
+ QUICK SEARCH (Ctrl+F)
+ BOOTSTRAP NAVBAR | BOOTSTRAP BUTTONS | BOOTSTRAP CARDS
+ BOOTSTRAP FORMS | BOOTSTRAP TABLES | BOOTSTRAP GRID
+ BOOTSTRAP SIDEBAR | BOOTSTRAP HERO | BOOTSTRAP FOOTER
+ BOOTSTRAP ALERTS | BOOTSTRAP AUTH | BOOTSTRAP BADGES
+ TAILWIND NAVBAR | TAILWIND BUTTONS | TAILWIND CARDS
+ TAILWIND FORMS | TAILWIND TABLES | TAILWIND GRID
+ TAILWIND SIDEBAR | TAILWIND HERO | TAILWIND FOOTER
+ TAILWIND ALERTS | TAILWIND AUTH | TAILWIND BADGES
+====================================================================
+*/
+
+
+/* ==================================================================
+   PART A — BOOTSTRAP-INSPIRED DESIGN SYSTEM
+   Palette: familiar blue, neutral surfaces, subtle borders.
+   Prefix: bs-
+================================================================== */
+
+
+/* ------------------------------------------------------------------
+   BS 00. OPTIONAL RESET AND BASE
+   Copy once if your project does not already have a reset.
+------------------------------------------------------------------ */
+
+.bs-reset,
+.bs-reset * {
+    box-sizing: border-box;
+}
+
+.bs-container {
+    width: 92%;
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bs-page {
+    min-height: 100vh;
+    background: #f8f9fa;
+    color: #212529;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.bs-page h1,
+.bs-page h2,
+.bs-page h3,
+.bs-page h4 {
+    color: #212529;
+    line-height: 1.25;
+    margin: 0 0 12px;
+}
+
+.bs-muted {
+    color: #6c757d;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 01. NAVBARS
+   Expected structure:
+   <nav class="bs-navbar">
+     <a class="bs-brand">Brand</a>
+     <ul class="bs-nav-links"><li><a>Home</a></li></ul>
+   </nav>
+------------------------------------------------------------------ */
+
+.bs-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 5%;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    color: #212529;
+}
+
+.bs-brand {
+    color: #0d6efd;
+    font-size: 1.35rem;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.bs-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.bs-nav-links a {
+    display: block;
+    padding: 8px 12px;
+    color: #495057;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.bs-nav-links a:hover,
+.bs-nav-links a.bs-active {
+    color: #0d6efd;
+    background: #eaf2ff;
+}
+
+.bs-navbar-dark {
+    background: #212529;
+    border-color: #343a40;
+}
+
+.bs-navbar-dark .bs-brand,
+.bs-navbar-dark .bs-nav-links a {
+    color: #fff;
+}
+
+.bs-navbar-dark .bs-nav-links a:hover,
+.bs-navbar-dark .bs-nav-links a.bs-active {
+    color: #fff;
+    background: #0d6efd;
+}
+
+.bs-navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 02. BUTTONS
+   Use base .bs-btn with one color/shape modifier.
+------------------------------------------------------------------ */
+
+.bs-btn {
+    display: inline-block;
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    line-height: 1.4;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s, border-color .2s, transform .2s;
+}
+
+.bs-btn:hover {
+    transform: translateY(-1px);
+    text-decoration: none;
+}
+
+.bs-btn-primary { color: #fff; background: #0d6efd; border-color: #0d6efd; }
+.bs-btn-primary:hover { background: #0b5ed7; border-color: #0a58ca; }
+
+.bs-btn-secondary { color: #fff; background: #6c757d; border-color: #6c757d; }
+.bs-btn-success { color: #fff; background: #198754; border-color: #198754; }
+.bs-btn-danger { color: #fff; background: #dc3545; border-color: #dc3545; }
+.bs-btn-warning { color: #212529; background: #ffc107; border-color: #ffc107; }
+.bs-btn-dark { color: #fff; background: #212529; border-color: #212529; }
+.bs-btn-light { color: #212529; background: #f8f9fa; border-color: #dee2e6; }
+
+.bs-btn-outline {
+    color: #0d6efd;
+    background: transparent;
+    border-color: #0d6efd;
+}
+
+.bs-btn-outline:hover {
+    color: #fff;
+    background: #0d6efd;
+}
+
+.bs-btn-sm { padding: 6px 11px; font-size: .82rem; }
+.bs-btn-lg { padding: 13px 23px; font-size: 1.08rem; }
+.bs-btn-block { display: block; width: 100%; }
+.bs-btn-rounded { border-radius: 50px; }
+.bs-btn:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+
+/* ------------------------------------------------------------------
+   BS 03. CARDS
+------------------------------------------------------------------ */
+
+.bs-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.06);
+}
+
+.bs-card-body { padding: 20px; }
+.bs-card-title { margin: 0 0 10px; color: #212529; font-size: 1.2rem; }
+.bs-card-text { margin: 0 0 14px; color: #6c757d; }
+
+.bs-card-img {
+    display: block;
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+.bs-card-hover {
+    transition: box-shadow .2s, transform .2s;
+}
+
+.bs-card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
+}
+
+.bs-card-horizontal {
+    display: flex;
+    align-items: stretch;
+}
+
+.bs-card-horizontal .bs-card-img {
+    width: 35%;
+    height: auto;
+    min-height: 170px;
+}
+
+.bs-profile-card {
+    padding: 24px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.07);
+}
+
+.bs-avatar {
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.bs-pricing-card {
+    padding: 28px 22px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.bs-price {
+    margin: 12px 0;
+    color: #0d6efd;
+    font-size: 2.2rem;
+    font-weight: 700;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 04. FORMS AND INPUTS
+------------------------------------------------------------------ */
+
+.bs-form {
+    width: 100%;
+    max-width: 520px;
+}
+
+.bs-form-group { margin-bottom: 16px; }
+
+.bs-label {
+    display: block;
+    margin-bottom: 6px;
+    color: #212529;
+    font-weight: 600;
+}
+
+.bs-control {
+    display: block;
+    width: 100%;
+    min-height: 42px;
+    padding: 9px 12px;
+    color: #212529;
+    background: #fff;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    font: inherit;
+    outline: none;
+    transition: border-color .15s, box-shadow .15s;
+}
+
+.bs-control:focus {
+    border-color: #86b7fe;
+    box-shadow: 0 0 0 4px rgba(13,110,253,.18);
+}
+
+.bs-control::placeholder { color: #6c757d; }
+textarea.bs-control { min-height: 115px; resize: vertical; }
+
+.bs-check-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.bs-check-row input {
+    width: 16px;
+    height: 16px;
+    accent-color: #0d6efd;
+}
+
+.bs-form-inline {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.bs-form-inline .bs-form-group {
+    flex: 1;
+    min-width: 160px;
+    margin: 0;
+}
+
+.bs-search {
+    display: flex;
+    width: 100%;
+    max-width: 480px;
+}
+
+.bs-search .bs-control {
+    min-width: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+.bs-search .bs-btn {
+    border-radius: 0 5px 5px 0;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 05. TABLES
+------------------------------------------------------------------ */
+
+.bs-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #dee2e6;
+    border-radius: 7px;
+}
+
+.bs-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.bs-table th,
+.bs-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.bs-table thead th {
+    color: #212529;
+    background: #e9ecef;
+    font-weight: 700;
+}
+
+.bs-table-bordered th,
+.bs-table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.bs-table-striped tbody tr:nth-child(even) {
+    background: #f8f9fa;
+}
+
+.bs-table-hover tbody tr:hover {
+    background: #eaf2ff;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 06. GRID AND LAYOUT UTILITIES
+------------------------------------------------------------------ */
+
+.bs-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.bs-col {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.bs-grid-2,
+.bs-grid-3,
+.bs-grid-4 {
+    display: grid;
+    gap: 20px;
+}
+
+.bs-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bs-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bs-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.bs-auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.bs-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bs-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.bs-text-center { text-align: center; }
+.bs-text-right { text-align: right; }
+.bs-w-100 { width: 100%; }
+.bs-mt-3 { margin-top: 1rem; }
+.bs-mb-3 { margin-bottom: 1rem; }
+.bs-p-3 { padding: 1rem; }
+
+
+/* ------------------------------------------------------------------
+   BS 07. SIDEBAR AND DASHBOARD
+------------------------------------------------------------------ */
+
+.bs-dashboard {
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.bs-sidebar {
+    padding: 22px 14px;
+    color: #fff;
+    background: #212529;
+}
+
+.bs-sidebar h3 {
+    padding: 0 10px;
+    margin: 0 0 18px;
+    color: #fff;
+}
+
+.bs-sidebar a {
+    display: block;
+    padding: 10px 12px;
+    margin: 4px 0;
+    color: #dee2e6;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.bs-sidebar a:hover,
+.bs-sidebar a.bs-active {
+    color: #fff;
+    background: #0d6efd;
+}
+
+.bs-dashboard-main {
+    min-width: 0;
+    padding: 28px;
+    background: #f8f9fa;
+}
+
+.bs-stat-card {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-left: 4px solid #0d6efd;
+    border-radius: 6px;
+}
+
+.bs-stat-number {
+    color: #212529;
+    font-size: 1.9rem;
+    font-weight: 700;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 08. HERO AND PAGE HEADER
+------------------------------------------------------------------ */
+
+.bs-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 360px;
+    padding: 65px 20px;
+    text-align: center;
+    background: #eaf2ff;
+}
+
+.bs-hero h1 {
+    max-width: 850px;
+    margin-bottom: 14px;
+    color: #212529;
+    font-size: clamp(2rem, 5vw, 3.3rem);
+}
+
+.bs-hero p {
+    max-width: 650px;
+    margin: 0 0 22px;
+    color: #6c757d;
+}
+
+.bs-hero-dark { background: #212529; }
+.bs-hero-dark h1, .bs-hero-dark p { color: #fff; }
+
+.bs-page-header {
+    padding: 30px 0;
+    background: #e9ecef;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 09. FOOTERS
+------------------------------------------------------------------ */
+
+.bs-footer {
+    padding: 26px 5%;
+    color: #f8f9fa;
+    text-align: center;
+    background: #212529;
+}
+
+.bs-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 25px;
+    padding: 35px 5%;
+    color: #dee2e6;
+    background: #212529;
+}
+
+.bs-footer-grid h3,
+.bs-footer-grid h4 { color: #fff; }
+
+.bs-footer-grid a {
+    display: block;
+    margin: 7px 0;
+    color: #adb5bd;
+    text-decoration: none;
+}
+
+.bs-footer-grid a:hover { color: #fff; }
+
+
+/* ------------------------------------------------------------------
+   BS 10. ALERTS AND BADGES
+------------------------------------------------------------------ */
+
+.bs-alert {
+    padding: 13px 16px;
+    margin: 12px 0;
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+
+.bs-alert-success { color: #0f5132; background: #d1e7dd; border-color: #badbcc; }
+.bs-alert-danger { color: #842029; background: #f8d7da; border-color: #f5c2c7; }
+.bs-alert-warning { color: #664d03; background: #fff3cd; border-color: #ffecb5; }
+.bs-alert-info { color: #055160; background: #cff4fc; border-color: #b6effb; }
+
+.bs-badge {
+    display: inline-block;
+    padding: 4px 9px;
+    color: #084298;
+    background: #cfe2ff;
+    border-radius: 50px;
+    font-size: .75rem;
+    font-weight: 700;
+}
+
+.bs-badge-success { color: #0f5132; background: #d1e7dd; }
+.bs-badge-danger { color: #842029; background: #f8d7da; }
+.bs-badge-warning { color: #664d03; background: #fff3cd; }
+
+
+/* ------------------------------------------------------------------
+   BS 11. LOGIN / REGISTRATION PANEL
+------------------------------------------------------------------ */
+
+.bs-auth-page {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 22px;
+    background: #e9ecef;
+}
+
+.bs-auth-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    box-shadow: 0 5px 18px rgba(0,0,0,.1);
+}
+
+.bs-auth-card h2 { margin-bottom: 22px; text-align: center; }
+
+
+/* ------------------------------------------------------------------
+   BS 12. LISTS, PAGINATION, GALLERY
+------------------------------------------------------------------ */
+
+.bs-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    border: 1px solid #dee2e6;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bs-list li {
+    padding: 11px 14px;
+    background: #fff;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.bs-list li:last-child { border-bottom: 0; }
+
+.bs-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    padding: 0;
+    list-style: none;
+}
+
+.bs-pagination a {
+    display: block;
+    padding: 7px 12px;
+    color: #0d6efd;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.bs-pagination a:hover,
+.bs-pagination a.bs-active {
+    color: #fff;
+    background: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.bs-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+    gap: 12px;
+}
+
+.bs-gallery img {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 13. DROPDOWN, MODAL, PROGRESS
+------------------------------------------------------------------ */
+
+.bs-dropdown { position: relative; display: inline-block; }
+
+.bs-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    min-width: 180px;
+    padding: 6px;
+    background: #fff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+}
+
+.bs-dropdown:hover .bs-dropdown-menu,
+.bs-dropdown:focus-within .bs-dropdown-menu { display: block; }
+
+.bs-dropdown-menu a {
+    display: block;
+    padding: 8px 10px;
+    color: #212529;
+    text-decoration: none;
+}
+
+.bs-dropdown-menu a:hover { background: #f8f9fa; }
+
+.bs-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    place-items: center;
+    padding: 20px;
+    background: rgba(0,0,0,.55);
+}
+
+.bs-modal.bs-modal-open { display: grid; }
+
+.bs-modal-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+.bs-progress {
+    height: 14px;
+    overflow: hidden;
+    background: #e9ecef;
+    border-radius: 50px;
+}
+
+.bs-progress-bar {
+    width: 60%; /* Change width to set progress, e.g. 75%. */
+    height: 100%;
+    background: #0d6efd;
+    border-radius: inherit;
+}
+
+
+/* ------------------------------------------------------------------
+   BS 14. RESPONSIVE RULES
+   Copy this block with the BS components you use.
+------------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .bs-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .bs-dashboard { grid-template-columns: 205px minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+    .bs-navbar { align-items: flex-start; flex-direction: column; }
+    .bs-grid-2, .bs-grid-3, .bs-grid-4 { grid-template-columns: 1fr; }
+    .bs-dashboard { grid-template-columns: 1fr; }
+    .bs-sidebar { min-height: auto; }
+    .bs-card-horizontal { flex-direction: column; }
+    .bs-card-horizontal .bs-card-img { width: 100%; height: 180px; }
+    .bs-form-inline { align-items: stretch; flex-direction: column; }
+    .bs-form-inline .bs-form-group { width: 100%; }
+    .bs-dashboard-main { padding: 18px; }
+}
+
+@media (max-width: 480px) {
+    .bs-container { width: 94%; }
+    .bs-auth-card { padding: 21px; }
+    .bs-hero { min-height: 290px; padding: 45px 16px; }
+}
+
+
+/* ==================================================================
+   PART B — TAILWIND-INSPIRED DESIGN SYSTEM
+   Palette: slate neutrals, indigo accent, generous spacing.
+   Prefix: tw-
+================================================================== */
+
+
+/* ------------------------------------------------------------------
+   TW 00. OPTIONAL BASE AND CONTAINER
+------------------------------------------------------------------ */
+
+.tw-container {
+    width: 92%;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.tw-page {
+    min-height: 100vh;
+    color: #0f172a;
+    background: #f8fafc;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+.tw-muted { color: #64748b; }
+
+
+/* ------------------------------------------------------------------
+   TW 01. NAVBARS
+------------------------------------------------------------------ */
+
+.tw-navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    padding: 16px 5%;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    box-shadow: 0 4px 14px rgba(15,23,42,.05);
+}
+
+.tw-brand {
+    color: #4f46e5;
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-decoration: none;
+    letter-spacing: -.03em;
+}
+
+.tw-nav-links {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tw-nav-links a {
+    display: block;
+    padding: 8px 12px;
+    color: #475569;
+    border-radius: 7px;
+    text-decoration: none;
+    transition: .2s;
+}
+
+.tw-nav-links a:hover,
+.tw-nav-links a.tw-active {
+    color: #4338ca;
+    background: #eef2ff;
+}
+
+.tw-navbar-dark {
+    background: #0f172a;
+    border-color: #1e293b;
+}
+
+.tw-navbar-dark .tw-brand { color: #a5b4fc; }
+.tw-navbar-dark .tw-nav-links a { color: #cbd5e1; }
+.tw-navbar-dark .tw-nav-links a:hover,
+.tw-navbar-dark .tw-nav-links a.tw-active {
+    color: #fff;
+    background: #3730a3;
+}
+
+.tw-navbar-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 02. BUTTONS
+------------------------------------------------------------------ */
+
+.tw-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 17px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font: inherit;
+    font-size: .92rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.tw-btn:hover {
+    transform: translateY(-1px);
+    filter: brightness(.96);
+    text-decoration: none;
+}
+
+.tw-btn-primary { color: #fff; background: #4f46e5; }
+.tw-btn-primary:hover { background: #4338ca; }
+.tw-btn-secondary { color: #3730a3; background: #e0e7ff; }
+.tw-btn-success { color: #166534; background: #dcfce7; }
+.tw-btn-danger { color: #991b1b; background: #fee2e2; }
+.tw-btn-dark { color: #fff; background: #0f172a; }
+.tw-btn-light { color: #334155; background: #f1f5f9; border-color: #e2e8f0; }
+
+.tw-btn-outline {
+    color: #4f46e5;
+    background: transparent;
+    border-color: #c7d2fe;
+}
+
+.tw-btn-outline:hover { background: #eef2ff; }
+
+.tw-btn-sm { padding: 7px 11px; font-size: .8rem; }
+.tw-btn-lg { padding: 13px 23px; font-size: 1.05rem; }
+.tw-btn-block { display: flex; width: 100%; }
+.tw-btn-pill { border-radius: 999px; }
+.tw-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+
+/* ------------------------------------------------------------------
+   TW 03. CARDS
+------------------------------------------------------------------ */
+
+.tw-card {
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(15,23,42,.04);
+}
+
+.tw-card-title {
+    margin: 0 0 8px;
+    color: #0f172a;
+    font-size: 1.15rem;
+    font-weight: 750;
+}
+
+.tw-card-text { margin: 0 0 14px; color: #64748b; }
+
+.tw-card-hover { transition: .22s ease; }
+.tw-card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(15,23,42,.1);
+}
+
+.tw-card-image {
+    overflow: hidden;
+    padding: 0;
+}
+
+.tw-card-image img {
+    width: 100%;
+    height: 195px;
+    object-fit: cover;
+}
+
+.tw-card-body { padding: 20px; }
+
+.tw-card-horizontal {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.tw-card-horizontal img {
+    width: 34%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.tw-profile-card {
+    padding: 25px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    box-shadow: 0 5px 15px rgba(15,23,42,.05);
+}
+
+.tw-avatar {
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.tw-pricing-card {
+    padding: 28px 22px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #e0e7ff;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(79,70,229,.06);
+}
+
+.tw-price {
+    margin: 12px 0;
+    color: #4f46e5;
+    font-size: 2.35rem;
+    font-weight: 800;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 04. FORMS AND INPUTS
+------------------------------------------------------------------ */
+
+.tw-form {
+    width: 100%;
+    max-width: 520px;
+}
+
+.tw-form-group { margin-bottom: 17px; }
+
+.tw-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #334155;
+    font-size: .9rem;
+    font-weight: 700;
+}
+
+.tw-control {
+    display: block;
+    width: 100%;
+    min-height: 43px;
+    padding: 10px 13px;
+    color: #0f172a;
+    background: #fff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    outline: none;
+    transition: .2s;
+}
+
+.tw-control::placeholder { color: #94a3b8; }
+
+.tw-control:focus {
+    border-color: #818cf8;
+    box-shadow: 0 0 0 4px rgba(99,102,241,.13);
+}
+
+textarea.tw-control { min-height: 120px; resize: vertical; }
+
+.tw-check-row {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 10px 0;
+    color: #475569;
+}
+
+.tw-check-row input {
+    width: 16px;
+    height: 16px;
+    accent-color: #4f46e5;
+}
+
+.tw-form-inline {
+    display: flex;
+    align-items: end;
+    flex-wrap: wrap;
+    gap: 13px;
+}
+
+.tw-form-inline .tw-form-group {
+    flex: 1;
+    min-width: 160px;
+    margin: 0;
+}
+
+.tw-search {
+    display: flex;
+    width: 100%;
+    max-width: 480px;
+}
+
+.tw-search .tw-control {
+    min-width: 0;
+    border-radius: 8px 0 0 8px;
+}
+
+.tw-search .tw-btn {
+    border-radius: 0 8px 8px 0;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 05. TABLES
+------------------------------------------------------------------ */
+
+.tw-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+}
+
+.tw-table {
+    width: 100%;
+    min-width: 520px;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.tw-table th,
+.tw-table td {
+    padding: 13px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tw-table thead th {
+    color: #64748b;
+    background: #f8fafc;
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+}
+
+.tw-table-striped tbody tr:nth-child(even) { background: #f8fafc; }
+.tw-table-hover tbody tr:hover { background: #eef2ff; }
+
+.tw-table-bordered th,
+.tw-table-bordered td { border: 1px solid #e2e8f0; }
+
+
+/* ------------------------------------------------------------------
+   TW 06. GRID AND LAYOUT UTILITIES
+------------------------------------------------------------------ */
+
+.tw-flex {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.tw-flex-wrap { flex-wrap: wrap; }
+
+.tw-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tw-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}
+
+.tw-flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.tw-grid-2,
+.tw-grid-3,
+.tw-grid-4 {
+    display: grid;
+    gap: 20px;
+}
+
+.tw-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.tw-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tw-grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.tw-auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.tw-container-sm { width: 92%; max-width: 760px; margin-inline: auto; }
+.tw-container-lg { width: 92%; max-width: 1320px; margin-inline: auto; }
+
+.tw-text-center { text-align: center; }
+.tw-text-right { text-align: right; }
+.tw-w-full { width: 100%; }
+.tw-mt-4 { margin-top: 1rem; }
+.tw-mb-4 { margin-bottom: 1rem; }
+.tw-p-4 { padding: 1rem; }
+.tw-rounded { border-radius: 10px; }
+.tw-shadow { box-shadow: 0 5px 15px rgba(15,23,42,.08); }
+
+
+/* ------------------------------------------------------------------
+   TW 07. SIDEBAR AND DASHBOARD
+------------------------------------------------------------------ */
+
+.tw-dashboard {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.tw-sidebar {
+    padding: 24px 15px;
+    color: #cbd5e1;
+    background: #0f172a;
+}
+
+.tw-sidebar h3 {
+    padding: 0 12px;
+    margin: 0 0 18px;
+    color: #fff;
+}
+
+.tw-sidebar a {
+    display: block;
+    padding: 11px 13px;
+    margin: 4px 0;
+    color: #cbd5e1;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: .2s;
+}
+
+.tw-sidebar a:hover,
+.tw-sidebar a.tw-active {
+    color: #fff;
+    background: #312e81;
+}
+
+.tw-dashboard-main {
+    min-width: 0;
+    padding: 30px;
+    background: #f8fafc;
+}
+
+.tw-stat-card {
+    padding: 21px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(15,23,42,.04);
+}
+
+.tw-stat-number {
+    margin-top: 5px;
+    color: #0f172a;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 08. HERO AND PAGE HEADER
+------------------------------------------------------------------ */
+
+.tw-hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 390px;
+    padding: 75px 22px;
+    text-align: center;
+    background: #eef2ff;
+    border-radius: 14px;
+}
+
+.tw-hero h1 {
+    max-width: 850px;
+    margin: 0 0 15px;
+    color: #0f172a;
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+    letter-spacing: -.04em;
+}
+
+.tw-hero p {
+    max-width: 660px;
+    margin: 0 0 24px;
+    color: #64748b;
+    font-size: 1.08rem;
+}
+
+.tw-hero-gradient {
+    color: #fff;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+}
+
+.tw-hero-gradient h1,
+.tw-hero-gradient p { color: #fff; }
+
+.tw-hero-dark { background: #0f172a; }
+.tw-hero-dark h1,
+.tw-hero-dark p { color: #fff; }
+
+.tw-page-header {
+    padding: 32px 0;
+    background: #f1f5f9;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 09. FOOTERS
+------------------------------------------------------------------ */
+
+.tw-footer {
+    padding: 28px 5%;
+    color: #cbd5e1;
+    text-align: center;
+    background: #0f172a;
+    border-radius: 10px;
+}
+
+.tw-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 26px;
+    padding: 40px 5%;
+    color: #cbd5e1;
+    background: #0f172a;
+    border-radius: 12px;
+}
+
+.tw-footer-grid h3,
+.tw-footer-grid h4 { color: #fff; }
+
+.tw-footer-grid a {
+    display: block;
+    margin: 8px 0;
+    color: #94a3b8;
+    text-decoration: none;
+}
+
+.tw-footer-grid a:hover { color: #fff; }
+
+
+/* ------------------------------------------------------------------
+   TW 10. ALERTS AND BADGES
+------------------------------------------------------------------ */
+
+.tw-alert {
+    padding: 14px 17px;
+    margin: 12px 0;
+    border: 1px solid transparent;
+    border-radius: 9px;
+}
+
+.tw-alert-success { color: #166534; background: #dcfce7; border-color: #bbf7d0; }
+.tw-alert-danger { color: #991b1b; background: #fee2e2; border-color: #fecaca; }
+.tw-alert-warning { color: #92400e; background: #fef3c7; border-color: #fde68a; }
+.tw-alert-info { color: #075985; background: #e0f2fe; border-color: #bae6fd; }
+
+.tw-badge {
+    display: inline-block;
+    padding: 4px 9px;
+    color: #3730a3;
+    background: #e0e7ff;
+    border-radius: 999px;
+    font-size: .75rem;
+    font-weight: 800;
+}
+
+.tw-badge-success { color: #166534; background: #dcfce7; }
+.tw-badge-danger { color: #991b1b; background: #fee2e2; }
+.tw-badge-warning { color: #92400e; background: #fef3c7; }
+
+
+/* ------------------------------------------------------------------
+   TW 11. LOGIN / REGISTRATION PANEL
+------------------------------------------------------------------ */
+
+.tw-auth-page {
+    display: grid;
+    place-items: center;
+    min-height: 100vh;
+    padding: 24px;
+    background: #eef2ff;
+}
+
+.tw-auth-card {
+    width: 100%;
+    max-width: 430px;
+    padding: 32px;
+    background: #fff;
+    border: 1px solid #e0e7ff;
+    border-radius: 15px;
+    box-shadow: 0 12px 30px rgba(79,70,229,.09);
+}
+
+.tw-auth-card h2 {
+    margin: 0 0 22px;
+    color: #0f172a;
+    text-align: center;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 12. LISTS, PAGINATION, GALLERY
+------------------------------------------------------------------ */
+
+.tw-list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+}
+
+.tw-list li {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.tw-list li:last-child { border-bottom: 0; }
+
+.tw-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    padding: 0;
+    list-style: none;
+}
+
+.tw-pagination a {
+    display: block;
+    padding: 8px 13px;
+    color: #4f46e5;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 7px;
+    text-decoration: none;
+}
+
+.tw-pagination a:hover,
+.tw-pagination a.tw-active {
+    color: #fff;
+    background: #4f46e5;
+    border-color: #4f46e5;
+}
+
+.tw-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+}
+
+.tw-gallery img {
+    width: 100%;
+    height: 185px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: .25s;
+}
+
+.tw-gallery img:hover { transform: scale(1.025); }
+
+
+/* ------------------------------------------------------------------
+   TW 13. DROPDOWN, MODAL, PROGRESS
+------------------------------------------------------------------ */
+
+.tw-dropdown { position: relative; display: inline-block; }
+
+.tw-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    z-index: 30;
+    min-width: 190px;
+    padding: 6px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    box-shadow: 0 10px 25px rgba(15,23,42,.12);
+}
+
+.tw-dropdown:hover .tw-dropdown-menu,
+.tw-dropdown:focus-within .tw-dropdown-menu { display: block; }
+
+.tw-dropdown-menu a {
+    display: block;
+    padding: 9px 11px;
+    color: #334155;
+    border-radius: 6px;
+    text-decoration: none;
+}
+
+.tw-dropdown-menu a:hover { background: #f1f5f9; }
+
+.tw-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    place-items: center;
+    padding: 20px;
+    background: rgba(15,23,42,.6);
+}
+
+.tw-modal.tw-modal-open { display: grid; }
+
+.tw-modal-content {
+    width: 100%;
+    max-width: 520px;
+    padding: 26px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 13px;
+    box-shadow: 0 20px 45px rgba(15,23,42,.2);
+}
+
+.tw-progress {
+    height: 12px;
+    overflow: hidden;
+    background: #e2e8f0;
+    border-radius: 999px;
+}
+
+.tw-progress-bar {
+    width: 65%; /* Change width to set progress, e.g. 40%. */
+    height: 100%;
+    background: #4f46e5;
+    border-radius: inherit;
+}
+
+
+/* ------------------------------------------------------------------
+   TW 14. RESPONSIVE RULES
+   Copy this block with the TW components you use.
+------------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .tw-grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tw-dashboard { grid-template-columns: 210px minmax(0, 1fr); }
+}
+
+@media (max-width: 700px) {
+    .tw-navbar { align-items: flex-start; flex-direction: column; }
+    .tw-grid-2, .tw-grid-3, .tw-grid-4 { grid-template-columns: 1fr; }
+    .tw-dashboard { grid-template-columns: 1fr; }
+    .tw-sidebar { min-height: auto; }
+    .tw-card-horizontal { align-items: stretch; flex-direction: column; }
+    .tw-card-horizontal img { width: 100%; height: 185px; }
+    .tw-form-inline { align-items: stretch; flex-direction: column; }
+    .tw-form-inline .tw-form-group { width: 100%; }
+    .tw-dashboard-main { padding: 18px; }
+}
+
+@media (max-width: 480px) {
+    .tw-container,
+    .tw-container-sm,
+    .tw-container-lg { width: 94%; }
+    .tw-auth-card { padding: 22px; }
+    .tw-hero { min-height: 300px; padding: 48px 16px; }
+}
+
+
+/* ==================================================================
+   END OF ALTERNATE CSS SNIPPET BANK
+================================================================== */

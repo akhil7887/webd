@@ -1,0 +1,1147 @@
+/*
+============================================================
+ CSS SNIPPET BANK - PLAIN CSS
+============================================================
+ PURPOSE
+ - This is a COPY-PASTE REFERENCE, not a stylesheet dependency.
+ - Find a section, copy the complete snippet into your project's
+   own CSS file, then adjust class names/colors/sizes as needed.
+ - Each component uses its own class prefix to reduce collisions.
+ - Most snippets are independent. Copy the responsive snippet
+   for a component too when you need its mobile layout.
+
+ QUICK SEARCH
+ Ctrl+F for: NAVBAR, CARD, BUTTON, FORM, TABLE, GRID, HERO,
+ SIDEBAR, FOOTER, ALERT, BADGE, LOGIN, GALLERY, RESPONSIVE.
+
+============================================================
+*/
+
+
+/* ==========================================================
+   00. OPTIONAL GLOBAL RESET
+   Copy once per project, if you need it.
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* ==========================================================
+   01. NAVBARS
+========================================================== */
+
+/* NAVBAR 1: Simple dark horizontal navbar
+   Expected classes: .sn-nav, .sn-nav-logo, .sn-nav-links
+*/
+.sn-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 15px 5%;
+    background: #222;
+    color: #fff;
+}
+
+.sn-nav-logo {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.sn-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    list-style: none;
+}
+
+.sn-nav-links a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 10px;
+}
+
+.sn-nav-links a:hover {
+    color: #93c5fd;
+}
+
+
+/* NAVBAR 2: Light navbar */
+.sn-nav-light {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,.1);
+}
+
+.sn-nav-light .sn-nav-logo {
+    color: #222;
+}
+
+.sn-nav-light .sn-nav-links a {
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+
+.sn-nav-light .sn-nav-links a:hover {
+    color: #fff;
+    background: #2563eb;
+}
+
+
+/* NAVBAR 3: Sticky navbar */
+.sn-nav-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* NAVBAR 4: Navbar with active link */
+.sn-nav-active {
+    background: #2563eb;
+    color: #fff !important;
+    border-radius: 5px;
+}
+
+
+/* ==========================================================
+   02. BUTTONS
+========================================================== */
+
+/* BUTTON 1: Base button - combine with a variant below */
+.sn-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.sn-btn:hover {
+    filter: brightness(.92);
+    transform: translateY(-1px);
+}
+
+
+/* BUTTON 2: Color variants */
+.sn-btn-blue {
+    color: #fff;
+    background: #2563eb;
+}
+
+.sn-btn-green {
+    color: #fff;
+    background: #16a34a;
+}
+
+.sn-btn-red {
+    color: #fff;
+    background: #dc2626;
+}
+
+.sn-btn-dark {
+    color: #fff;
+    background: #222;
+}
+
+.sn-btn-gray {
+    color: #222;
+    background: #e5e7eb;
+}
+
+
+/* BUTTON 3: Outline button */
+.sn-btn-outline {
+    color: #2563eb;
+    background: transparent;
+    border: 2px solid #2563eb;
+}
+
+.sn-btn-outline:hover {
+    color: #fff;
+    background: #2563eb;
+}
+
+
+/* BUTTON 4: Rounded / pill button */
+.sn-btn-pill {
+    border-radius: 50px;
+}
+
+
+/* BUTTON 5: Button sizes */
+.sn-btn-small {
+    padding: 6px 12px;
+    font-size: 13px;
+}
+
+.sn-btn-large {
+    padding: 14px 28px;
+    font-size: 18px;
+}
+
+.sn-btn-block {
+    display: block;
+    width: 100%;
+}
+
+
+/* ==========================================================
+   03. CARDS
+========================================================== */
+
+/* CARD 1: Basic card */
+.sn-card {
+    padding: 22px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+.sn-card h3 {
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.sn-card p {
+    color: #666;
+}
+
+
+/* CARD 2: Hover lift card */
+.sn-card-hover {
+    transition: .25s ease;
+}
+
+.sn-card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,.15);
+}
+
+
+/* CARD 3: Image product card */
+.sn-product-card {
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+}
+
+.sn-product-card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+.sn-product-body {
+    padding: 18px;
+}
+
+.sn-product-title {
+    margin-bottom: 8px;
+    font-size: 20px;
+}
+
+.sn-product-price {
+    margin: 10px 0;
+    color: #16a34a;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+
+/* CARD 4: Profile card */
+.sn-profile-card {
+    max-width: 320px;
+    padding: 25px;
+    text-align: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.1);
+}
+
+.sn-profile-card img {
+    width: 110px;
+    height: 110px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+/* CARD 5: Horizontal card */
+.sn-horizontal-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0,0,0,.1);
+}
+
+.sn-horizontal-card img {
+    width: 180px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+
+/* CARD 6: Pricing card */
+.sn-pricing-card {
+    padding: 30px 22px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0,0,0,.08);
+}
+
+.sn-pricing-card .sn-price {
+    margin: 15px 0;
+    color: #2563eb;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+/* ==========================================================
+   04. FORMS AND INPUTS
+========================================================== */
+
+/* FORM 1: Standard form */
+.sn-form {
+    width: 100%;
+    max-width: 500px;
+}
+
+.sn-form-group {
+    margin-bottom: 16px;
+}
+
+.sn-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+.sn-form input,
+.sn-form select,
+.sn-form textarea {
+    display: block;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font: inherit;
+    outline: none;
+}
+
+.sn-form input:focus,
+.sn-form select:focus,
+.sn-form textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.12);
+}
+
+.sn-form textarea {
+    min-height: 110px;
+    resize: vertical;
+}
+
+
+/* FORM 2: Search bar */
+.sn-search {
+    display: flex;
+    width: 100%;
+    max-width: 500px;
+}
+
+.sn-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 11px 14px;
+    border: 1px solid #ccc;
+    border-right: 0;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+}
+
+.sn-search button {
+    padding: 11px 18px;
+    color: #fff;
+    background: #2563eb;
+    border: 1px solid #2563eb;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+
+
+/* FORM 3: Inline form */
+.sn-inline-form {
+    display: flex;
+    align-items: end;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.sn-inline-form .sn-form-group {
+    flex: 1;
+    min-width: 160px;
+}
+
+
+/* FORM 4: Input with icon space (place icon in HTML if needed) */
+.sn-input-icon {
+    padding-left: 40px !important;
+}
+
+
+/* ==========================================================
+   05. TABLES
+========================================================== */
+
+/* TABLE 1: Standard bordered table */
+.sn-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+.sn-table th,
+.sn-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+.sn-table th {
+    color: #fff;
+    background: #2563eb;
+}
+
+
+/* TABLE 2: Striped rows */
+.sn-table-striped tbody tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+
+/* TABLE 3: Hover rows */
+.sn-table-hover tbody tr:hover {
+    background: #dbeafe;
+}
+
+
+/* TABLE 4: Rounded table wrapper; wrapper enables horizontal scrolling */
+.sn-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+
+/* ==========================================================
+   06. FLEXBOX AND GRID LAYOUTS
+========================================================== */
+
+/* LAYOUT 1: Center horizontally and vertically */
+.sn-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* LAYOUT 2: Space items apart */
+.sn-space-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* LAYOUT 3: Flex row with wrapping */
+.sn-flex {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+
+/* LAYOUT 4: Two equal columns */
+.sn-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* LAYOUT 5: Three equal columns */
+.sn-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* LAYOUT 6: Four equal columns */
+.sn-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+
+/* LAYOUT 7: Auto responsive cards */
+.sn-auto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+
+/* LAYOUT 8: Center content in full viewport */
+.sn-full-center {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+
+/* LAYOUT 9: Standard fixed-width container */
+.sn-container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================
+   07. SIDEBAR AND DASHBOARD
+========================================================== */
+
+/* SIDEBAR 1: Dark vertical sidebar */
+.sn-sidebar {
+    width: 240px;
+    min-height: 100vh;
+    padding: 22px 15px;
+    background: #1e293b;
+}
+
+.sn-sidebar a {
+    display: block;
+    padding: 12px 14px;
+    margin-bottom: 5px;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.sn-sidebar a:hover,
+.sn-sidebar a.active {
+    background: #2563eb;
+}
+
+
+/* SIDEBAR 2: Light sidebar */
+.sn-sidebar-light {
+    background: #f1f5f9;
+    border-right: 1px solid #ddd;
+}
+
+.sn-sidebar-light a {
+    color: #333;
+}
+
+.sn-sidebar-light a:hover,
+.sn-sidebar-light a.active {
+    color: #fff;
+}
+
+
+/* DASHBOARD: Sidebar + main content */
+.sn-dashboard {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    min-height: 100vh;
+}
+
+.sn-dashboard-main {
+    min-width: 0;
+    padding: 28px;
+}
+
+
+/* DASHBOARD: Statistic card */
+.sn-stat-card {
+    padding: 20px;
+    background: #fff;
+    border-left: 4px solid #2563eb;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,.08);
+}
+
+.sn-stat-card .sn-stat-number {
+    font-size: 30px;
+    font-weight: bold;
+    color: #222;
+}
+
+
+/* ==========================================================
+   08. HERO SECTIONS
+========================================================== */
+
+/* HERO 1: Centered hero */
+.sn-hero {
+    min-height: 380px;
+    padding: 70px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #dbeafe;
+}
+
+.sn-hero h1 {
+    margin-bottom: 15px;
+    font-size: clamp(32px, 5vw, 52px);
+}
+
+.sn-hero p {
+    max-width: 650px;
+    margin-bottom: 22px;
+}
+
+
+/* HERO 2: Gradient hero */
+.sn-hero-gradient {
+    color: #fff;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+}
+
+.sn-hero-gradient h1,
+.sn-hero-gradient p {
+    color: #fff;
+}
+
+
+/* HERO 3: Dark hero */
+.sn-hero-dark {
+    color: #fff;
+    background: #1e293b;
+}
+
+.sn-hero-dark h1,
+.sn-hero-dark p {
+    color: #fff;
+}
+
+
+/* ==========================================================
+   09. FOOTERS
+========================================================== */
+
+/* FOOTER 1: Simple centered footer */
+.sn-footer {
+    padding: 25px 15px;
+    color: #fff;
+    text-align: center;
+    background: #222;
+}
+
+
+/* FOOTER 2: Multi-column footer */
+.sn-footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 25px;
+    padding: 40px 5%;
+    color: #ddd;
+    background: #1e293b;
+}
+
+.sn-footer-grid h3,
+.sn-footer-grid h4 {
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.sn-footer-grid a {
+    display: block;
+    margin: 7px 0;
+    color: #cbd5e1;
+    text-decoration: none;
+}
+
+.sn-footer-grid a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   10. ALERTS AND BADGES
+========================================================== */
+
+/* ALERT: Base + variants */
+.sn-alert {
+    padding: 13px 16px;
+    margin: 12px 0;
+    border: 1px solid transparent;
+    border-radius: 6px;
+}
+
+.sn-alert-success {
+    color: #166534;
+    background: #dcfce7;
+    border-color: #86efac;
+}
+
+.sn-alert-danger {
+    color: #991b1b;
+    background: #fee2e2;
+    border-color: #fca5a5;
+}
+
+.sn-alert-warning {
+    color: #92400e;
+    background: #fef3c7;
+    border-color: #fcd34d;
+}
+
+.sn-alert-info {
+    color: #155e75;
+    background: #cffafe;
+    border-color: #67e8f9;
+}
+
+
+/* BADGE: Base + variants */
+.sn-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    color: #1d4ed8;
+    background: #dbeafe;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.sn-badge-green {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.sn-badge-red {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.sn-badge-yellow {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+
+/* ==========================================================
+   11. LOGIN AND REGISTRATION BOXES
+========================================================== */
+
+/* LOGIN 1: Centered login card */
+.sn-login-page {
+    min-height: 100vh;
+    padding: 20px;
+    display: grid;
+    place-items: center;
+    background: #eef2ff;
+}
+
+.sn-login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 22px rgba(0,0,0,.12);
+}
+
+.sn-login-box h2 {
+    margin-bottom: 22px;
+    text-align: center;
+}
+
+.sn-login-box input {
+    width: 100%;
+    padding: 11px;
+    margin: 8px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.sn-login-box button {
+    width: 100%;
+    padding: 11px;
+    color: #fff;
+    background: #2563eb;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+/* ==========================================================
+   12. GALLERY AND IMAGE STYLES
+========================================================== */
+
+/* GALLERY: Responsive image grid */
+.sn-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.sn-gallery img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: .25s ease;
+}
+
+.sn-gallery img:hover {
+    transform: scale(1.03);
+}
+
+
+/* IMAGE: Common image helpers */
+.sn-img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.sn-img-circle {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.sn-img-rounded {
+    border-radius: 10px;
+}
+
+
+/* ==========================================================
+   13. PAGINATION AND LISTS
+========================================================== */
+
+/* PAGINATION */
+.sn-pagination {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+    padding: 0;
+}
+
+.sn-pagination a {
+    display: block;
+    padding: 8px 13px;
+    color: #2563eb;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.sn-pagination a:hover,
+.sn-pagination a.active {
+    color: #fff;
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+
+/* LIST: Clean list */
+.sn-list {
+    padding: 0;
+    list-style: none;
+}
+
+.sn-list li {
+    padding: 11px 14px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* ==========================================================
+   14. DROPDOWN AND MODAL
+========================================================== */
+
+/* DROPDOWN: Reveal on hover or keyboard focus */
+.sn-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.sn-dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 20;
+    min-width: 180px;
+    padding: 6px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.12);
+}
+
+.sn-dropdown:hover .sn-dropdown-menu,
+.sn-dropdown:focus-within .sn-dropdown-menu {
+    display: block;
+}
+
+.sn-dropdown-menu a {
+    display: block;
+    padding: 9px 12px;
+    color: #333;
+    text-decoration: none;
+}
+
+.sn-dropdown-menu a:hover {
+    background: #f1f5f9;
+}
+
+
+/* MODAL: Add .sn-modal-open to show it.
+   CSS styles the modal; JavaScript or another permitted
+   mechanism must control opening and closing. */
+.sn-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    padding: 20px;
+    place-items: center;
+    background: rgba(0,0,0,.55);
+}
+
+.sn-modal-open {
+    display: grid;
+}
+
+.sn-modal-content {
+    width: 100%;
+    max-width: 500px;
+    padding: 25px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,.2);
+}
+
+
+/* ==========================================================
+   15. PROGRESS BARS
+========================================================== */
+
+.sn-progress {
+    width: 100%;
+    height: 14px;
+    overflow: hidden;
+    background: #e5e7eb;
+    border-radius: 30px;
+}
+
+.sn-progress-bar {
+    width: 60%; /* Change this value, e.g. 25%, 75%, 100% */
+    height: 100%;
+    background: #2563eb;
+    border-radius: inherit;
+}
+
+.sn-progress-green {
+    background: #16a34a;
+}
+
+.sn-progress-red {
+    background: #dc2626;
+}
+
+
+/* ==========================================================
+   16. SMALL EFFECTS AND UTILITIES
+========================================================== */
+
+/* Center an element's contents */
+.sn-text-center {
+    text-align: center;
+}
+
+/* Add a soft shadow */
+.sn-shadow {
+    box-shadow: 0 4px 14px rgba(0,0,0,.12);
+}
+
+/* Rounded corners */
+.sn-rounded {
+    border-radius: 10px;
+}
+
+/* Single-line ellipsis */
+.sn-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Smooth hover lift */
+.sn-hover-lift {
+    transition: .25s ease;
+}
+
+.sn-hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.13);
+}
+
+/* Fade-in animation */
+@keyframes sn-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.sn-fade-in {
+    animation: sn-fade-in .5s ease both;
+}
+
+
+/* ==========================================================
+   17. RESPONSIVE SNIPPETS
+   Copy the relevant rules into your project's media query.
+========================================================== */
+
+@media (max-width: 768px) {
+
+    /* Navbar: stack logo and links */
+    .sn-nav,
+    .sn-nav-light {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sn-nav-links {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    /* Grids: two columns become one */
+    .sn-grid-2,
+    .sn-grid-3,
+    .sn-grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Dashboard: sidebar above content */
+    .sn-dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .sn-sidebar {
+        width: 100%;
+        min-height: auto;
+    }
+
+    /* Horizontal card becomes vertical */
+    .sn-horizontal-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sn-horizontal-card img {
+        width: 100%;
+        height: 190px;
+    }
+
+    /* Inline form stacks */
+    .sn-inline-form {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .sn-inline-form .sn-form-group {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sn-nav,
+    .sn-nav-light {
+        padding: 12px 4%;
+    }
+
+    .sn-hero {
+        min-height: 300px;
+        padding: 45px 15px;
+    }
+
+    .sn-login-box {
+        padding: 22px;
+    }
+
+    .sn-container {
+        width: 94%;
+    }
+}
+
+
+/* ==========================================================
+   END OF CSS SNIPPET BANK
+========================================================== */
